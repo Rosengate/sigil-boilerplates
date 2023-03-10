@@ -16,3 +16,6 @@ php artisan key:generate
 php artisan config:cache
 php artisan serve
 ```
+
+## after that
+rename `main` or `vue-project` however you wish
