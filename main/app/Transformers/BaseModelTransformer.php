@@ -10,18 +10,18 @@ use League\Fractal\TransformerAbstract;
 class BaseModelTransformer extends TransformerAbstract
 {
     /**
-     * @param BaseModel $employee
+     * @param BaseModel $model
      * @return array
      */
-    public function transform($employee)
+    public function transform($model)
     {
         if (method_exists($this, 'handle')) {
-            $arr = call_user_func_array([$this, 'handle'], [$employee]);
+            $arr = call_user_func_array([$this, 'handle'], [$model]);
 
-            return array_merge(['id' => $employee->id], $arr, ['created_at' => $employee->created_at, 'updated_at' => $employee->updated_at]);
+            return array_merge(['id' => $model->id], $arr, ['created_at' => $model->created_at, 'updated_at' => $model->updated_at]);
         }
 
-        return $employee->toArray();
+        return $model->toArray();
     }
 
 //    /**
