@@ -8,4 +8,14 @@ class RootController extends Controller
     {
         return WebController::class;
     }
+
+    public function groupApis()
+    {
+        return ApisController::class;
+    }
+
+    public function groupSamples()
+    {
+        return SamplesController::class;
+    }
 }
