@@ -12,6 +12,7 @@ use App\Http\Controllers\Apis\CompanyAuthApiController;
 use App\Http\Controllers\Apis\CompaniesApiController;
 use App\Http\Controllers\Apis\DashboardApiController;
 use App\Http\Controllers\Apis\SetupApiController;
+use App\Http\Controllers\Apis\TestApiController;
 use App\Middlewares\ExceptionHandlingMiddleware;
 use App\Middlewares\RouteModelMiddleware;
 use App\Middlewares\RulesMiddleware;
@@ -149,5 +150,10 @@ class ApisController extends Controller
     public function getError()
     {
         throw new RouteNotFoundException();
+    }
+
+    public function groupTest()
+    {
+        return TestApiController::class;
     }
 }
